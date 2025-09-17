@@ -5,31 +5,17 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Updated tech stack based on CV
+
 const techStack = [
-    "Python",
-    "FastAPI",
-    "Flask",
-    "React",
-    "Node.js",
-    "AWS",
-    "Azure",
-    "GCP",
-    "Docker",
-    "MongoDB",
-    "PostgreSQL",
-    "LangChain",
-    "LangGraph",
-    "LLaMA",
-    "Hugging Face",
-    "PyTorch",
-    "Transformers",
-    "Neo4j",
-    "Pinecone",
-    "ChromaDB",
-    "Streamlit",
-    "Dash",
-];
+    "Python", "Flask", "FastAPI", "JavaScript", "React","NextJS", "Node.js",
+     "Pandas", "SQL",
+    "Scikit-learn", "NLTK", "SpaCy", "OpenCV",
+    "PyTorch", "TensorFlow", "Transformers",
+    "LangChain", "LangGraph", "CrewAI", "LlamaIndex", "MCP",
+    "MongoDB", "PostgreSQL", "Neo4j", "Pinecone", "ChromaDB", "Weaviate",
+    "AWS","Azure", "GCP","Git", "Docker", "LangSmith",
+    "Weights & Biases", "MLflow"
+]
 
 export function HeroSection() {
     return (

@@ -1,65 +1,69 @@
 "use client";
 
-import { Star, BrainCircuit, Users, GraduationCap, Cloud, Award } from "lucide-react";
+import { Star, BrainCircuit, Users, GraduationCap, Cloud, Award,Code ,Server, Calculator } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Trust elements updated to reflect Ibtissam's AI expertise and experience
 const trustElements = [
+
     {
-        name: "AI Engineering Specialist",
-        icon: BrainCircuit,
-        description:
-            "Specialized AI Engineer focused on Generative AI, LLMs, and multi-agent systems with hands-on experience in RAG pipelines and fine-tuning.",
-        color: "text-green-400",
-        bgColor: "bg-green-400/10",
-        borderColor: "border-green-400/20",
-    },
-    {
-        name: "Multi-Cloud AI Expertise",
-        icon: Cloud,
-        description:
-            "Extensive experience with AWS (SageMaker, Rekognition, Textract), Azure (Document Intelligence, OpenAI Service), and GCP (Vertex AI, Gemini) for scalable AI solutions.",
-        color: "text-blue-400",
-        bgColor: "bg-blue-400/10",
-        borderColor: "border-blue-400/20",
-    },
-    {
-        name: "Production AI Systems",
-        icon: Award,
-        description:
-            "Developed and deployed production-grade AI systems including multi-agent platforms, KYC automation, and intelligent document processing for real-world applications.",
-        color: "text-purple-400",
-        bgColor: "bg-purple-400/10",
-        borderColor: "border-purple-400/20",
-    },
-    {
-        name: "Advanced AI Toolchain",
-        icon: Star,
-        description:
-            "Proficient with cutting-edge AI tools including LangChain, LangGraph, CrewAI, LlamaIndex, and multiple LLM frameworks (LLaMA, Mistral, DeepSeek, Qwen).",
-        color: "text-yellow-400",
-        bgColor: "bg-yellow-400/10",
-        borderColor: "border-yellow-400/20",
-    },
-    {
-        name: "Global AI Projects",
-        icon: Users,
-        description:
-            "Delivered AI solutions across UAE, France, and Morocco, working with international teams on complex AI engineering challenges and consulting projects.",
-        color: "text-cyan-400",
-        bgColor: "bg-cyan-400/10",
-        borderColor: "border-cyan-400/20",
-    },
-    {
-        name: "ENSEM Engineering Student",
-        icon: GraduationCap,
-        description:
-            "Pursuing Engineering degree in Software Engineering and Digitalization at the National High School of Electricity and Mechanics (ENSEM).",
-        color: "text-accent",
-        bgColor: "bg-accent/10",
-        borderColor: "border-accent/20",
-    },
+    name: "Preparatory Classes (MP)",
+    icon: Calculator,
+    description:
+      "Completed two years of Mathematics and Physics preparatory classes (CPGE), building a strong foundation in advanced mathematics that allows me to understand complex AI and ML algorithms, master problem-solving, and approach engineering challenges with scientific rigor.",
+    color: "text-orange-400",
+    bgColor: "bg-orange-400/10",
+    borderColor: "border-orange-400/20",
+  },
+ {
+    name: "Engineering School (ENSEM)",
+    icon: GraduationCap,
+    description:
+      "Engineering degree in Software Engineering and Digitalization at ENSEM, where I combined strong AI specialization with software system design, mathematical modeling, and digital transformation shaping me into a versatile AI software engineer.",
+    color: "text-accent",
+    bgColor: "bg-accent/10",
+    borderColor: "border-accent/20",
+  },
+  {
+    name: "AI Engineering Specialist",
+    icon: BrainCircuit,
+    description:
+      "Engineer specialized in Generative AI, LLMs, and multi-agent systems with hands-on expertise in RAG pipelines, fine-tuning, and advanced AI automation.",
+    color: "text-green-400",
+    bgColor: "bg-green-400/10",
+    borderColor: "border-green-400/20",
+  },
+  {
+    name: "Global AI Projects",
+    icon: Users,
+    description:
+      "Delivered AI services and consulting projects across UAE, France, and Morocco, collaborating with international teams on large-scale AI engineering challenges.",
+    color: "text-cyan-400",
+    bgColor: "bg-cyan-400/10",
+    borderColor: "border-cyan-400/20",
+  },
+  {
+    name: "Software Engineering",
+    icon: Code,
+    description:
+      "Solid background in software development with React, Node.js, Express.js, MongoDB, and Flask, experienced in building secure, scalable, and user-centered applications.",
+    color: "text-indigo-400",
+    bgColor: "bg-indigo-400/10",
+    borderColor: "border-indigo-400/20",
+  },
+  {
+    name: "Cloud Engineering",
+    icon: Server,
+    description:
+      "Skilled in architecting, deploying, and monitoring AI-driven cloud applications using AWS EC2, Docker, S3, CloudWatch, Azure VMs, and Google App Engine.",
+    color: "text-teal-400",
+    bgColor: "bg-teal-400/10",
+    borderColor: "border-teal-400/20",
+  },
+
 ];
+
+
 
 export function TrustStrip() {
     return (
@@ -104,7 +108,7 @@ export function TrustStrip() {
                             transition={{ duration: 0.6, delay: 0.3 }}
                             viewport={{ once: true }}
                         >
-                            AI Engineering Excellence & Innovation
+                          Software & AI Engineering Excellence
                         </motion.h2>
                         <motion.p
                             className="text-lg text-muted-foreground max-w-3xl mx-auto"
@@ -113,9 +117,7 @@ export function TrustStrip() {
                             transition={{ duration: 0.6, delay: 0.4 }}
                             viewport={{ once: true }}
                         >
-                            I specialize in building scalable, real-world AI solutions using cutting-edge 
-                            technologies. My expertise spans from multi-agent systems to production-ready 
-                            generative AI applications that solve complex business challenges.
+                          I specialize in building scalable, real-world AI solutions using cutting-edge technologies. My expertise spans from multi-agent systems to production-ready generative AI applications, while also excelling in software development, cloud computing, and end-to-end deployment pipelines that solve complex business challenges.
                         </motion.p>
                     </div>
 

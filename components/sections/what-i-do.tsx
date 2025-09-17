@@ -38,7 +38,7 @@ const services = [
     },
     {
         icon: Network,
-        title: "Document AI & Automation",
+        title: "Cognitive Data Processing",
         description:
             "Building intelligent document processing systems using computer vision, NLP, and automated workflows. Specializing in KYC automation, data extraction, and intelligent content analysis.",
         features: [
