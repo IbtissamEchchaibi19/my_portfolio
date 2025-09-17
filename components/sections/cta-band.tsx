@@ -8,9 +8,16 @@ import { motion } from "framer-motion";
 export function CTABand() {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Enhanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-primary/5 to-accent/5" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.15),transparent_70%)]" />
+      {/* Hero-style Background Pattern */}
+      <div className="absolute inset-0 -z-10 bg-background">
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
+            backgroundSize: "50px 50px",
+          }}
+        />
+      </div>
       
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

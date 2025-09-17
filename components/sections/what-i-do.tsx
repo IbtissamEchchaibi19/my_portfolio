@@ -55,7 +55,18 @@ const services = [
 
 export function WhatIDo() {
     return (
-        <section className="py-24 bg-background/70 backdrop-blur-lg">
+        <section className="py-24 relative overflow-hidden">
+            {/* Hero-style Background Pattern */}
+            <div className="absolute inset-0 -z-10 bg-background">
+                <div
+                    className="absolute inset-0 opacity-[0.03]"
+                    style={{
+                        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
+                        backgroundSize: "50px 50px",
+                    }}
+                />
+            </div>
+
             <div className="container mx-auto max-w-7xl px-4">
                 <motion.div
                     className="text-center space-y-6 mb-16"

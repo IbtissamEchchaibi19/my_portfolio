@@ -25,10 +25,10 @@ interface ProjectCardProps {
   project: ProjectData;
   index: number;
 }
-
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const liveDisabled = !project.liveHref || project.liveHref === "#";
   const githubDisabled = !project.githubHref || project.githubHref === "#";
+  
   return (
     <motion.div
       className="h-full group"
@@ -39,8 +39,35 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       whileHover={{ y: -8 }}
     >
       <Card className={`h-full flex flex-col bg-card/50 border-2 ${project.borderColor} hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden`}>
-        {/* Project Image */}
-        <div className="relative h-48 overflow-hidden">
+        {/* Project Image - FIXED */}
+        <div className="relative h-48 overflow-hidden bg-muted">
+          {/* Actual Image Display */}
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            onError={(e) => {
+              // Fallback if image fails to load
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              const parent = target.parentElement;
+              if (parent) {
+                parent.innerHTML = `
+                  <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+                    <div class="text-center">
+                      <div class="w-16 h-16 mx-auto mb-2 bg-gray-300 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                        <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                      </div>
+                      <p class="text-sm text-gray-500">Image not available</p>
+                    </div>
+                  </div>
+                `;
+              }
+            }}
+          />
+          
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
           
           {/* Status Badge Overlay */}

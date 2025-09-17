@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ProjectCard, ProjectData } from "@/components/ui/project-card";
 
 // Projects updated to reflect Ibtissam's AI engineering work
-const projects: ProjectData[] = [
+const projects: ProjectData[] =[
     {
         id: "honey-quality-ai-system",
         title: "Multi-Agent Honey Quality System",
@@ -18,7 +18,8 @@ const projects: ProjectData[] = [
         color: "text-green-400",
         bgColor: "bg-green-400/10",
         borderColor: "border-green-400/20",
-        image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8eb?w=600&h=400&fit=crop&auto=format&q=80",
+        // Correct GitHub raw URL format
+        image: "https://raw.githubusercontent.com/IbtissamEchchaibi19/image-hub/main/honey.png",
         liveHref: "#",
         githubHref: "#"
     },
@@ -26,7 +27,7 @@ const projects: ProjectData[] = [
         id: "kyc-ai-automation",
         title: "AI-Powered KYC Automation",
         description: "Built a cloud-based KYC system using computer vision and automated document processing on AWS, featuring liveness detection and identity verification with Amazon Rekognition and Textract.",
-        status: "Live",
+        status: "deployed",
         tags: ["AWS", "PyTorch", "OpenCV", "Rekognition", "Textract", "Flask", "Docker"],
         icon: FileText,
         color: "text-blue-400",
@@ -34,19 +35,21 @@ const projects: ProjectData[] = [
         borderColor: "border-blue-400/20",
         liveHref: "#",
         githubHref: "#", 
-        image: "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&h=400&fit=crop&auto=format&q=80",
+        // Correct GitHub raw URL format
+        image: "https://raw.githubusercontent.com/IbtissamEchchaibi19/image-hub/main/kyc.png",
     },
     {
         id: "rag-career-platform",
         title: "RAG-Powered Career Platform",
         description: "Engineered an AI platform using LangChain and Google Gemini for personalized interview coaching, CV insights, and auto-generated application letters with vector search and job market intelligence.",
-        status: "Completed",
+        status: "production",
         tags: ["LangChain", "Gemini Pro", "Pinecone", "FastAPI", "MongoDB", "LangSmith"],
         icon: Users,
         color: "text-purple-400",
         bgColor: "bg-purple-400/10",
         borderColor: "border-purple-400/20",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&auto=format&q=80",
+        // Correct GitHub raw URL format
+        image: "https://raw.githubusercontent.com/IbtissamEchchaibi19/image-hub/main/resume.png",
         liveHref: "#",
         githubHref: "#"
     },
@@ -60,7 +63,8 @@ const projects: ProjectData[] = [
         color: "text-cyan-400",
         bgColor: "bg-cyan-400/10",
         borderColor: "border-cyan-400/20",
-        image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&h=400&fit=crop&auto=format&q=80",
+        // Correct GitHub raw URL format
+        image: "https://raw.githubusercontent.com/IbtissamEchchaibi19/image-hub/main/podcast.png",
         liveHref: "#",
         githubHref: "#"
     },
@@ -68,7 +72,18 @@ const projects: ProjectData[] = [
 
 export function FeaturedProjects() {
     return (
-        <section className="py-24 bg-background/50 backdrop-blur-sm">
+        <section className="py-24 relative overflow-hidden">
+            {/* Hero-style Background Pattern */}
+            <div className="absolute inset-0 -z-10 bg-background">
+                <div
+                    className="absolute inset-0 opacity-[0.03]"
+                    style={{
+                        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
+                        backgroundSize: "50px 50px",
+                    }}
+                />
+            </div>
+
             <div className="container mx-auto max-w-7xl px-4">
                 {/* Section Header */}
                 <motion.div

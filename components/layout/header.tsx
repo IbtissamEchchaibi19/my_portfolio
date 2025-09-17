@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -54,15 +55,26 @@ export function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="container-max">
+      {/* Centralized container */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Left aligned */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
             <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative">
+                <div className="relative h-9 w-9 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group-hover:shadow-cyan-400/25 group-hover:shadow-xl">
+                  <img
+                    src="https://raw.githubusercontent.com/IbtissamEchchaibi19/image-hub/main/linkdinpict.jpg"
+                    alt="Ibtissam Ech-Chaibi"
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
               <div className="hidden sm:block">
                 <span className="font-semibold text-white group-hover:text-cyan-300 transition-colors duration-300">
                   Ibtissam Ech-Chaibi
@@ -74,8 +86,8 @@ export function Header() {
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center justify-center gap-1 flex-1 max-w-2xl mx-8">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.href}
@@ -105,7 +117,7 @@ export function Header() {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button - Right aligned */}
           <motion.div
             className="hidden md:block"
             initial={{ opacity: 0, x: 20 }}
@@ -146,9 +158,17 @@ export function Header() {
                     className="flex items-center gap-3"
                     onClick={() => setIsOpen(false)}
                   >
+                    <div className="relative h-10 w-10 rounded-xl overflow-hidden">
+                      <Image
+                        src="https://raw.githubusercontent.com/IbtissamEchchaibi19/image-hub/main/linkdinpict.jpg"
+                        alt="Ibtissam Ech-Chaibi"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                     <div>
                       <div className="font-semibold text-white">Ibtissam Ech-Chaibi</div>
-                      <div className="text-xs text-gray-400 font-mono">AI Architect & Full-Stack Pro</div>
+                      <div className="text-xs text-gray-400 font-mono">Full-Stack AI Software Engineer</div>
                     </div>
                   </Link>
                 </div>

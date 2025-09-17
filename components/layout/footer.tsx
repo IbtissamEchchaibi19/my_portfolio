@@ -18,13 +18,23 @@ const FreelancerIcon = ({ className }: { className?: string }) => (
     <polygon points="13 12 22 12 15 16" />
   </svg>
 );
-
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-border">
-      <div className="container mx-auto max-w-7xl px-4 py-12">
+    <footer className="relative w-full border-t border-border overflow-hidden">
+      {/* Background Pattern (same as Hero) */}
+      <div className="absolute inset-0 -z-10 bg-background">
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
+            backgroundSize: "50px 50px",
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto max-w-7xl px-4 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
@@ -32,7 +42,7 @@ export function Footer() {
               <span className="font-semibold text-foreground">Ibtissam Ech-Chaibi</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-sm">
-              Full Stack AI software Engineer  building reliable, AI‑powered products for startups and teams worldwide.
+              Full Stack AI software Engineer building reliable, AI-powered products for startups and teams worldwide.
             </p>
           </div>
 
@@ -40,16 +50,16 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-foreground">Quick Links</h3>
             <div className="grid grid-cols-2 gap-2">
-              <Link href="/projects" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+              <Link href="/projects" className="text-sm text-muted-foreground hover:text-accent">
                 Projects
               </Link>
-              <Link href="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+              <Link href="/about" className="text-sm text-muted-foreground hover:text-accent">
                 About
               </Link>
-              <Link href="/experience" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+              <Link href="/experience" className="text-sm text-muted-foreground hover:text-accent">
                 Experience
               </Link>
-              <Link href="/contact" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+              <Link href="/contact" className="text-sm text-muted-foreground hover:text-accent">
                 Contact
               </Link>
             </div>
