@@ -146,14 +146,17 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-center mb-12">My Journey</h2>
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p className="text-lg leading-relaxed mb-6">
-                  With professional experience across UAE, France, and Morocco, I design intelligent AI systems that solve complex real-world problems. 
-                  I have built multi-agent AI platforms, fine-tuned domain-specific LLMs, and orchestrated scalable cloud-based AI solutions.
+                  My journey into Computer Science began with two years of intensive mathematics and physics preparatory classes in Morocco,
+                   which sharpened my problem-solving mindset and built the analytical foundation I still rely on today.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                  Each project, from AI-driven document processing to personalized learning platforms, has strengthened my expertise in bridging advanced AI technologies with actionable outcomes.
+                At ENSEM Engineering School, I deepened my expertise in software engineering and digitalization, where I transitioned from building secure full-stack applications to exploring the intelligence behind systems. Internships in Morocco and India introduced me to applied machine learning automating financial risk analysis, designing dashboards, and experimenting with NLP pipelines.
+              </p>
+                <p className="text-lg leading-relaxed mb-6">
+                in France, I engineered a cloud-based KYC platform with liveness detection on AWS, while in the UAE, I built multi-agent AI platforms, fine-tuned domain-specific LLMs, and deployed scalable cloud architectures. Hackathon wins, freelance projects, and self-driven initiatives further reinforced my ability to turn complex AI models into actionable, real-world solutions.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Today, I continue to push the boundaries of AI innovation, contribute to open-source projects, and share knowledge with the community, while constantly exploring emerging models, tools, and frameworks.
+Today, I continue to push the boundaries of AI innovation, contribute to open-source projects, and share knowledge with the community, while constantly exploring emerging models, tools, and frameworks across different domains of computer science. .
                 </p>
               </div>
             </div>
@@ -267,8 +270,7 @@ export default function AboutPage() {
               </div>
               <h2 className="text-3xl font-bold mb-6">Beyond the Code</h2>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                When I&apos;m not building AI solutions, I contribute to open-source projects, mentor aspiring developers, and explore emerging AI technologies. 
-                I thrive on collaboration and continuous learning to create impactful solutions.
+                When I&apos;m not building AI solutions, I contribute to open-source projects, mentor aspiring developers, and explore emerging AI technologies. Beyond code, I enjoy creating content, reading AI blogs, delving into philosophy and psychology books, and engaging with podcasts as a curious lifelong learner. I thrive on collaboration and continuous learning to create impactful solutions
               </p>
               <div className="flex justify-center gap-8 text-sm text-muted-foreground">
                 <div className="flex items-center"><Globe className="w-4 h-4 mr-2" />3 Languages</div>

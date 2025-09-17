@@ -1,17 +1,16 @@
+'use client'
+
+import { useState } from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { ExternalLink, Github, Calendar, Clock, Code, Brain, Database, Cpu, Rocket } from 'lucide-react'
+import { ExternalLink, Github, Calendar, Clock, Code, Brain, Database, Cpu, Rocket, ChevronDown, ChevronUp } from 'lucide-react'
 import { AnimatedBackground } from '@/components/3d/animated-background'
 
-export const metadata: Metadata = {
-  title: 'Projects |Ibtissam Ech-Chaibi -- Full-Stack AI Software Engineer',
-  description: 'Explore my portfolio of AI, full-stack development, and cloud services, showcasing innovative solutions and technical excellence, and demonstrating efficient project deployment'
-}
-
+// Your existing projects data...
 const projects = [
   {
     id: 'verification-api',
@@ -24,7 +23,7 @@ const projects = [
     status: 'Completed',
     timeline: '1 months',
     year: '2025',
-    client: 'Independent Project',
+    client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/qualityapi/tree/master' },
@@ -42,7 +41,7 @@ const projects = [
     status: 'Completed',
     timeline: '1 months',
     year: '2025',
-    client: 'Independent Project',
+    client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/invoicesdashapi/blob/master' },
@@ -60,7 +59,7 @@ const projects = [
     status: 'Completed',
     timeline: '2 months',
     year: '2025',
-    client: 'Independent Project',
+    client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/beekeepchatbot' },
@@ -78,7 +77,7 @@ const projects = [
     status: 'Completed',
     timeline: '2 months',
     year: '2025',
-    client: 'Independent Project',
+   client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/GraphRAG-Retreving-Reports/tree/master' },
@@ -96,7 +95,7 @@ const projects = [
     status: 'Completed',
     timeline: '1 months',
     year: '2025',
-    client: 'Independent Project',
+   client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/FineTuningLLM/tree/master' }
@@ -113,7 +112,7 @@ const projects = [
     status: 'Completed',
     timeline: '2 weeks',
     year: '2025',
-    client: 'Independent Project',
+    client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/Email-Assistance-Agent/blob/master' },
@@ -131,7 +130,7 @@ const projects = [
     status: 'Completed',
     timeline: '2 weeks',
     year: '2025',
-    client: 'Independent Project',
+   client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/github-mcp-agent/blob/master' },
@@ -149,7 +148,7 @@ const projects = [
     status: 'Completed',
     timeline: '1 week',
     year: '2025',
-    client: 'Independent Project',
+    client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/Wastewater-Surveillance-AI-System/blob/master' },
@@ -167,7 +166,7 @@ const projects = [
     status: 'Completed',
     timeline: '1 week',
     year: '2025',
-    client: 'Independent Project',
+   client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/Thiqah-Foods-AI/tree/master' },
@@ -185,7 +184,7 @@ const projects = [
     status: 'Completed',
     timeline: '1 months',
     year: '2024',
-    client: 'Independent Project',
+   client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/JobSeeker/blob/main' },
@@ -203,7 +202,7 @@ const projects = [
     status: 'Completed',
     timeline: '1 months',
     year: '2024',
-    client: 'Independent Project',
+    client: 'Real-World Prototyping',
     featured: true,
     links: [
       { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/kyc-api/blob/main/' },
@@ -258,7 +257,7 @@ const projects = [
     client: 'Independent Project',
     featured: false,
     links: [
-      { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/Crop-Disease-Chatbot' }
+      { type: 'github', url: 'https://github.com/IbtissamEchchaibi19/Crop-Disease-Detection-and-Advisory-Chatbot'}
     ],
   },
   {
@@ -281,9 +280,6 @@ const projects = [
 
 ]
 
-
-
-
 const categories = ['All', 'AI/ML', 'Full-Stack', 'Cloud']
 
 const getProjectIcon = (category: string) => {
@@ -299,7 +295,6 @@ const getProjectIcon = (category: string) => {
   }
 }
 
-// Small icon variant for category tabs
 const getCategoryIcon = (category: string) => {
   switch (category) {
     case 'AI/ML':
@@ -311,6 +306,56 @@ const getCategoryIcon = (category: string) => {
     default:
       return <Cpu className="w-4 h-4" />
   }
+}
+
+// Skills component with expand/collapse functionality
+function ProjectSkills({ tags, projectId }: { tags: string[], projectId: string }) {
+  const [expandedProjects, setExpandedProjects] = useState<Set<string>>(new Set())
+  const maxVisibleTags = 4
+  const isExpanded = expandedProjects.has(projectId)
+  const hasMoreTags = tags.length > maxVisibleTags
+
+  const toggleExpanded = () => {
+    const newExpandedProjects = new Set(expandedProjects)
+    if (isExpanded) {
+      newExpandedProjects.delete(projectId)
+    } else {
+      newExpandedProjects.add(projectId)
+    }
+    setExpandedProjects(newExpandedProjects)
+  }
+
+  const visibleTags = isExpanded ? tags : tags.slice(0, maxVisibleTags)
+
+  return (
+    <div className="space-y-2">
+      <div className="flex flex-wrap gap-1">
+        {visibleTags.map((tag) => (
+          <Badge key={tag} variant="secondary" className="text-xs">
+            {tag}
+          </Badge>
+        ))}
+        {hasMoreTags && (
+          <button
+            onClick={toggleExpanded}
+            className="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium rounded-md border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+          >
+            {isExpanded ? (
+              <>
+                <ChevronUp className="w-3 h-3" />
+                <span>Show Less</span>
+              </>
+            ) : (
+              <>
+                <span>+{tags.length - maxVisibleTags}</span>
+                <ChevronDown className="w-3 h-3" />
+              </>
+            )}
+          </button>
+        )}
+      </div>
+    </div>
+  )
 }
 
 export default function ProjectsPage() {
@@ -326,7 +371,7 @@ export default function ProjectsPage() {
       case 'kaggle':
         return { text: 'View Notebook', icon: <ExternalLink className="w-4 h-4" /> }
       default:
-        return { text: 'View Link', icon: <ExternalLink className="w-4 h-4" /> }
+        return { text: 'View Demo', icon: <ExternalLink className="w-4 h-4" /> }
     }
   }
 
@@ -408,7 +453,6 @@ export default function ProjectsPage() {
                       .map((project) => (
                         <Card key={project.id} className="flex flex-col overflow-hidden group hover:shadow-lg transition-shadow duration-300">
                           <div className="relative overflow-hidden">
-                            {/* Since all projects have image: null, we only show the gradient version */}
                             <div className={`w-full h-60 bg-gradient-to-br ${project.imageGradient} flex flex-col items-center justify-center group-hover:scale-105 transition-transform duration-300 relative`}>
                               <div className="text-white text-center p-4 z-10">
                                 <div className="mb-3 opacity-80">
@@ -463,18 +507,9 @@ export default function ProjectsPage() {
                                   Client: {project.client}
                                 </p>
                               </div>
-                              <div className="flex flex-wrap gap-1">
-                                {project.tags.slice(0, 4).map((tag) => (
-                                  <Badge key={tag} variant="secondary" className="text-xs">
-                                    {tag}
-                                  </Badge>
-                                ))}
-                                {project.tags.length > 4 && (
-                                  <Badge variant="secondary" className="text-xs">
-                                    +{project.tags.length - 4}
-                                  </Badge>
-                                )}
-                              </div>
+                              
+                              {/* Updated Skills Section with Expandable Functionality */}
+                              <ProjectSkills tags={project.tags} projectId={project.id} />
                             </CardContent>
 
                             <CardFooter className="flex-wrap gap-x-4 gap-y-2 border-t pt-4 mt-auto">
