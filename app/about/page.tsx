@@ -126,7 +126,15 @@ export default function AboutPage() {
   </div>
 
   {/* Image Column */}
-  <div className="flex justify-center lg:justify-end">
+  <div className="flex flex-col items-center lg:items-end space-y-4">
+    {/* Experience Badge - Above Image */}
+    <Badge
+      variant="outline"
+      className="px-4 py-2 text-sm font-semibold bg-gradient-to-r from-primary/5 to-accent/5 border-primary/30 text-primary hover:bg-primary/10 transition-all duration-300"
+    >
+      3+ Years Experience
+    </Badge>
+    
     <img
       src="https://raw.githubusercontent.com/IbtissamEchchaibi19/image-hub/main/linkdinpict.jpg"
       alt="Ibtissam Ech-Chaibi"
