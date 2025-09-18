@@ -102,6 +102,21 @@ export function HeroSection() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     >
+                        {/* Experience Badge - Above Image */}
+                        <motion.div
+                            className="flex justify-center"
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                        >
+                            <Badge
+                                variant="outline"
+                                className="px-4 py-2 text-sm font-semibold bg-gradient-to-r from-primary/5 to-accent/5 border-primary/30 text-primary hover:bg-primary/10 transition-all duration-300"
+                            >
+                                3+ Years Experience
+                            </Badge>
+                        </motion.div>
+
                         <motion.div
                             className="rounded-lg overflow-hidden border-2 border-primary/20 shadow-xl max-w-md w-full"
                             initial={{ opacity: 0, scale: 0.9 }}
